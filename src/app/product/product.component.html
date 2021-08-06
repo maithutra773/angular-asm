@@ -1,0 +1,35 @@
+<div class="my-5 mx-5">
+<h2>Danh sách sản phẩm </h2>
+<a class="nav-link" href="/product/add"><button type="button" class="btn btn-warning">Thêm Sản Phẩm</button></a>
+<table class="table">
+    <thead class="border border-solid-1px">
+        <th>STT</th>
+        <th>Tên sp</th>
+        <th>Ảnh</th>
+        <th>Giá sp</th>
+        <th>Tình trạng</th>
+        <th>...</th>
+    </thead>
+    <tbody class="border border-solid-1px">
+        <tr *ngFor="let product of products;index as i" class="border border-solid-1px">
+            <td>{{i+1}}</td>
+            <td>{{product.name}}</td>
+            <td><img [src]="product.photo" alt="" width="100px"></td>
+            <td>{{product.price}}</td>
+            <td>{{product.status ? 'còn hàng' : 'hết hàng'}}</td>
+            <td>
+                <button class="btn btn-warning btn-sm" routerLink="/product/{{product.id}}">
+                    Detail
+                </button>
+                <button class="btn btn-primary btn-sm" routerLink="/product/{{product.id}}/edit" >
+                    Edit
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="onHandleRemove(product.id)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+

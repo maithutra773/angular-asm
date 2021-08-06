@@ -1,0 +1,33 @@
+<div class="my-5 border border-solid-1px px-5 py-2 mx-5">
+<h2>Sửa sản phẩm</h2>
+<form action="">
+  <div class="mb-3">
+    <label for="">Tên sản phẩm</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="product.name"
+      name="name"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="">Gía sản phẩm</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="product.price"
+      name="price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="">Mô tả</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="product.description"
+      name="description"
+    />
+  </div>
+  <button class="btn btn-primary" (click)="onEditProduct()">Submit</button>
+</form>
+</div>

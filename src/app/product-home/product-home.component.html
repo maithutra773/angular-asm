@@ -1,0 +1,12 @@
+<main class="row row-cols-4 px-3 mx-3">
+<div *ngFor="let product of products;index as i" class="card col-6 mx-auto " style="width: 300px;">
+    <img [src]="product.photo" alt="" width="250px" class="mx-auto my-2 ">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.price}}</p>
+      <button class="btn btn-warning btn-sm " routerLink="/product/{{product.id}}">
+        Buy
+    </button>
+    </div>
+  </div>
+</main>
